@@ -45,21 +45,28 @@ $(function() {
 			total2 = numsArr2.join("");
 			$("#screen").html(total1 + total2);
 			console.log(total2)
-		} else if (e.target.id = "calc") {
+//Equal button
+		} else if (e.target.id === "calc") {
 			if(operator === "+") {
 				$("#screen").html(parseInt(total1) + parseInt(total2));
-				reset()
-
+				reset();
 				console.log(firstHalf)
 			} else if (operator === "-") {
 				$("#screen").html(parseInt(total1) - parseInt(total2));
-			} else if (operator === "*") {
+				reset();
+			} else if (operator === "x") {
 				$("#screen").html(parseInt(total1) * parseInt(total2));
-			} else if (operator === "&divide;")
-		}
-		//Equal button
+				reset();
+			} else if (operator === "/") {
+				$("#screen").html(parseInt(total1) / parseInt(total2));
+				reset();
+			}
+//Clear button
+		} else if (e.target.id === "cancel"){
+			reset();
+			$("#screen").html("");
 
-		//Clear button
+		}
 
 		// console.log(e)
 	})
